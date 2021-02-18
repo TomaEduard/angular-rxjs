@@ -1,0 +1,19 @@
+<div class="courses-panel">
+  <h3>All Courses</h3>
+
+  <button mat-stroked-button (click)="turnOnOffLoading()">turn on 2,5sec</button>
+
+  <mat-tab-group>
+    <mat-tab label="Beginners">
+      <courses-card-list 
+        [courses]="beginnerCourses$ | async" 
+        (coursesChanges)="reloadCourses()"
+      ></courses-card-list>
+    </mat-tab>
+
+    <mat-tab label="Advanced"> 
+      <courses-card-list [courses]="advancedCourses$ | async"></courses-card-list>
+    </mat-tab>
+
+  </mat-tab-group>
+</div>
