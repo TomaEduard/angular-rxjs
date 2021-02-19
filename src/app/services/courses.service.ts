@@ -23,6 +23,7 @@ export class CoursesService {
     return this.http.put(`/api/courses/${courseId}`, changes)
       .pipe(
         shareReplay()
+        
       );
   }
 

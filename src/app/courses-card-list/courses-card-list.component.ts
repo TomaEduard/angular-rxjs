@@ -14,9 +14,6 @@ export class CoursesCardListComponent implements OnInit {
 
   @Input() courses: Course[] = [];
 
-  @Output()
-  private coursesChanges = new EventEmitter()
-
   constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
@@ -35,7 +32,7 @@ export class CoursesCardListComponent implements OnInit {
     dialogRef.afterClosed()
       .pipe(
         filter(val => !!val),
-        tap(() => this.coursesChanges.emit())
+        // tap(() => this.coursesChanges.emit())
       )
       .subscribe();
   }

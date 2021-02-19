@@ -1,4 +1,5 @@
 export interface Course {
+  filter(arg0: boolean);
   id: string;
   description: string;
   longDescription: string;
